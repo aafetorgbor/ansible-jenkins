@@ -1,33 +1,13 @@
 ---
-- name: Check IBM Cloud VPC VSI
+- name: List VPC Images and Instance Profiles
   hosts: localhost
   collections:
    - ibm.cloudcollection
+
   tasks:
-    - name: Fetch the variables from var file
-      include_vars:
-        file: vars.yml
-        
-    - name: Check resource group Exists
-      ibm_resource_group_info:
-        name: "{{ resource_group_name }}"
-      failed_when:
-         - resource_group_output.rc != 0
-         - '"ResourceGroupDoesnotExist" not in resource_group_output.stderr'
-      register: resource_group_output
-      
-    - name: Print Resource group info
-      debug:
-        var: resource_group_output
-        
-    - name: Retrieve image list
-      ibm_is_images_info:
+    - ibm_is_images_info:
       register: images_list
-      
-    - name: Check for existing VSI
-      ibm_is_instance_info:
-        name: "{{ vsi_name }}"
-      failed_when:
-        - vsi.rc != 0
-        - '"No Instance found" not in vsi.stderr'
-      register: vsi  
+
+    - debug:
+        var: images_list.resource.images |
+             items2dict(key_name='name', value_name='id')
