@@ -16,7 +16,7 @@
          - '"ResourceGroupDoesnotExist" not in resource_group_output.stderr'
       register: resource_group_output
       
-     - name: Print Resource group info
+    - name: Print Resource group info
       debug:
         var: resource_group_output
         
