@@ -8,6 +8,18 @@
       include_vars:
         file: vars.yml
         
+    - name: Check resource group Exists
+      ibm_resource_group_info:
+        name: "{{ resource_group_name }}"
+      failed_when:
+         - resource_group_output.rc != 0
+         - '"ResourceGroupDoesnotExist" not in resource_group_output.stderr'
+      register: resource_group_output
+      
+     - name: Print Resource group info
+      debug:
+        var: resource_group_output
+        
     - name: Retrieve image list
       ibm_is_images_info:
       register: images_list
