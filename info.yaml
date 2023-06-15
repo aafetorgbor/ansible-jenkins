@@ -1,5 +1,5 @@
 ---
-- name: List VPC Images and Instance Profiles
+- name: List VPC Images 
   hosts: localhost
   collections:
    - ibm.cloudcollection
