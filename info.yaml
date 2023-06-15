@@ -5,6 +5,10 @@
    - ibm.cloudcollection
 
   tasks:
+  
+    - name: Fetch the variables from var file
+      include_vars:
+        file: vars.yaml
     - ibm_is_images_info:
       register: images_list
 
