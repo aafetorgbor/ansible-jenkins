@@ -1,0 +1,8 @@
+---
+- name: WINDOWS AUTOMATION
+  hosts: windows
+  become: false
+  gather_facts: true
+  tasks:
+  - name: TEST CONNECTION
+    win_ping:
