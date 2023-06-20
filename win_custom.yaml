@@ -4,9 +4,6 @@
   become: false
   gather_facts: true
   tasks:
-  - name: TEST CONNECTION
-    win_ping:
-
   - name: CREATE USER bob
     win_user:
       name: bob
