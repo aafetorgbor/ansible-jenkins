@@ -1,0 +1,16 @@
+---
+- name: WINDOWS AUTOMATION DEMO
+  hosts: windows
+  become: false
+  gather_facts: true
+  tasks:
+  - name: TEST CONNECTION
+    win_ping:
+
+  - name: CREATE USER bob
+    win_user:
+      name: bob
+      password: B0b123$
+      state: present
+      groups:
+        - Users
