@@ -1,0 +1,33 @@
+---
+- name: win_ping module demo
+  hosts: windows
+  become: false
+  gather_facts: true
+  tasks:
+  - name: test connection
+    win_ping:
+
+  - name: Search-only, return list of found updates (if any), log to C:\ansible_wu.txt
+    win_updates:
+      category_names: SecurityUpdates
+      state: searched
+      log_path: C:\ansible_wu.txt
+    register: output
+
+  - name: display output
+    debug:
+      var: output
+
+  - name: Install all security, critical, and rollup updates
+    win_updates:
+      category_names:
+        - SecurityUpdates
+        - CriticalUpdates
+        - UpdateRollups
+      reboot: yes
+    register: print
+
+  - name: Print Installed Updates
+    debug:
+
+      var: print
