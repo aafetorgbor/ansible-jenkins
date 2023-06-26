@@ -1,5 +1,5 @@
 ---
-- name: win_ping module demo
+- name: Check for windows updates
   hosts: windows
   become: false
   gather_facts: false
