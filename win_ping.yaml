@@ -2,7 +2,7 @@
 - name: WINDOWS AUTOMATION
   hosts: windows
   become: false
-  gather_facts: true
+  gather_facts: false
   tasks:
   - name: TEST CONNECTION
     win_ping:
