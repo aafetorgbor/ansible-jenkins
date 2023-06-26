@@ -2,7 +2,7 @@
 - name: win_ping module demo
   hosts: windows
   become: false
-  gather_facts: true
+  gather_facts: false
   tasks:
   - name: test connection
     win_ping:
