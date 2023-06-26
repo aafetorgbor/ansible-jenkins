@@ -26,5 +26,8 @@
 
   - name: Print Installed Updates
     debug:
-
       var: print
+
+  - name: Reboot when it is required
+    win_reboot:
+    when: print.reboot_required    
