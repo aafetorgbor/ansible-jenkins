@@ -20,6 +20,7 @@
       category_names:
         - SecurityUpdates
         - CriticalUpdates
+        - DefinitionUpdates
         - UpdateRollups
       reboot: yes
     register: print
