@@ -11,6 +11,8 @@
         - CriticalUpdates
         - DefinitionUpdates
         - UpdateRollups
+        - Updates
+        - OptionalQualityUpdates
       reboot: yes
     register: print
   - name: Print Installed Updates
