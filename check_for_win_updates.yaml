@@ -12,7 +12,7 @@
         - DefinitionUpdates
         - UpdateRollups
         - Updates
-        - OptionalQualityUpdates
+        - QualityUpdates
       state: searched
       log_path: C:\ansible_wu.txt
     register: output
