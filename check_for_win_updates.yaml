@@ -11,6 +11,8 @@
         - CriticalUpdates
         - DefinitionUpdates
         - UpdateRollups
+        - Updates
+        - OptionalQualityUpdates
       state: searched
       log_path: C:\ansible_wu.txt
     register: output
