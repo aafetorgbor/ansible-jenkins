@@ -19,20 +19,4 @@
     debug:
       var: output
 
-  - name: Install all security, critical, and rollup updates
-    win_updates:
-      category_names:
-        - SecurityUpdates
-        - CriticalUpdates
-        - DefinitionUpdates
-        - UpdateRollups
-      reboot: yes
-    register: print
-
-  - name: Print Installed Updates
-    debug:
-      var: print
-
-  - name: Reboot when it is required
-    win_reboot:
-    when: print.reboot_required    
+ 
