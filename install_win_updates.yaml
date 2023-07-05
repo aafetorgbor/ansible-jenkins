@@ -12,7 +12,7 @@
         - DefinitionUpdates
         - UpdateRollups
         - Updates
-        - OptionalQualityUpdates
+        - QualityUpdates
       reboot: yes
     register: print
   - name: Print Installed Updates
