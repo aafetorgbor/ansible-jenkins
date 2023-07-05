@@ -13,6 +13,7 @@
         - UpdateRollups
         - Updates
         - QualityUpdates
+      state: installed
       reboot: yes
     register: print
   - name: Print Installed Updates
